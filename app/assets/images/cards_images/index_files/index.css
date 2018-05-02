@@ -1,0 +1,88 @@
+body {
+    background-image: url("./images/cartoon_underwater.png");
+    background-repeat: repeat;
+    background-position: right top;
+    background-attachment: fixed;
+}
+
+#grid {
+    position: relative;
+    margin-left: 88px;
+    border: 3px ridge #2196f385;
+    width: 531px;
+    height: 500px;
+    box-sizing: border-box;
+}
+
+.rows {
+    width: 525px;
+    height: 44px;
+    /*border: 1px dashed;*/
+    box-sizing: border-box;
+    position: relative;
+}
+
+.bubble {
+    position:absolute;
+    border:1px solid black;
+    width:50px;
+    height:50px;
+    box-sizing:border-box;
+    border-radius:50%;
+    display:block;
+    transition: top 0.5s, left 0.5s;
+}
+
+#cannon {
+    border: 1px solid;
+    height: 90px;
+    width: 48px;
+    position: absolute;
+    top: 400px;
+    left: 238px;
+
+}
+/*.rows {
+    position: relative;
+    left: 50px;
+    top: 0px;
+}*/
+
+/*.scoreboard {
+    position : relative;
+    top : 387px;
+    width : 170px;
+    height : 113px;
+    font-size: 25px;
+    font-family : monospace;
+    }*/
+    
+/*.div_buttons {
+    position: relative;
+    top: 393px;
+    left : 438px;
+    width : 170px;
+    height : 113px;
+    
+}
+
+#startbutton{
+    position: relative;
+    margin: 7px;
+    background: lightgreen;
+    padding: 5px;
+    font-family: monospace;
+    font-size: x-large;
+}
+
+#stopbutton {
+    position: relative;
+    margin: 6px;
+    background: red;
+    padding: 12px;
+    font-family: monospace;
+    font-size: x-large;
+}
+    
+
+*/

@@ -1,0 +1,2 @@
+class CardCopy < ApplicationRecord
+end
