@@ -1,0 +1,8 @@
+<%= "Welcome #{current_player.email}" %>
+
+<%= link_to "DECKS", "#{current_player.id}/decks" %>
+<%= link_to "COLLECTION", "#{current_player.id}/collection" %>
+<%= link_to "BATTLE", "#{current_player.id}/battle" %>
+
+
+<h4 id="header-links" class="col-md"><%= link_to "Logout", destroy_player_session_path, method: :delete, class:"link-design" %></h4>

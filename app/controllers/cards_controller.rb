@@ -8,6 +8,9 @@ class CardsController < ApplicationController
   def create
   	Card.create!(card_params)
   end
+  def show
+    @card = Card.find(params[:id])
+  end
   private
  	def card_params
  		params.require(:card).permit(:name, :klass, :rarity, :mana_cost, :type_of_card, :collection, :collection_number, :skills, :attack, :hp)
