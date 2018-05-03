@@ -13,50 +13,40 @@ This is your collection
 		<th>Healt points</th>
 		<th>Attack points</th>
 		<th>Skills</th>
-		<!-- <th>Card</th> -->
-
 	</tr>
 	<% @cards.each do |card|%>
-	<tr>
-		<td><%= card.id%></td>
-		<td><%= link_to card.name, "/cards/#{card.id}"%></td>
-		<td><%= card.klass%></td>
-		<td><%= card.type_of_card%></td>
-		<td><%= card.collection%></td>
-		<td><%= card.collection_number%></td>
-		<td><%= card.mana_cost%></td>
-		<td><%= card.hp%></td>
-		<td><%= card.attack%></td>
-		<td><%= card.skills%></td>
-		<!-- <td><%= image_tag asset_path(card.card_image)%></td> -->
-	</tr>
+		<tr>
+			<td><%= card.id%></td>
+			<td><li style="list-style-type: none;" value="<%= card.id%>" data-toggle="modal" data-target="#myModal<%= card.id%>"><%= card.name%></li></td>
+			<td><%= card.klass%></td>
+			<td><%= card.type_of_card%></td>
+			<td><%= card.collection%></td>
+			<td><%= card.collection_number%></td>
+			<td><%= card.mana_cost%></td>
+			<td><%= card.hp%></td>
+			<td><%= card.attack%></td>
+			<td><%= card.skills%></td>
+
+
+			<!-- The Modal -->
+			<div class="modal fade" id="myModal<%= card.id%>">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<!-- Modal Header -->
+				      <div class="modal-header">
+				        <h4 class="modal-title"><%= card.name%></h4>
+				        <button type="button" class="close" data-dismiss="modal">&times;</button>
+				      </div>
+
+				      <!-- Modal body -->
+				      <div class="modal-body mx-auto">
+				        <%= image_tag card.card_image%>
+				      </div>
+
+					</div>
+				</div>
+			</div>
+		</tr>
 	<%end%>
 
 </table>
-
-<div class="container">
-  <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-</div>
