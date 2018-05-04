@@ -35,6 +35,12 @@ gem 'bootstrap'
 gem 'devise'
 # gem for jQuery
 gem 'jquery-rails'
+# gem for dot-env
+gem 'dotenv-rails'
+#, groups: [:development, :test
+# gem for aws s3 services
+gem 'aws-sdk-s3', '~> 1'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

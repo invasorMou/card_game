@@ -6,28 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Card.create(name: "", klass: '', rarity: "", mana_cost:  , type_of_card: '', collection: '', skills: '', attack: , hp:  , card_image: "")
+Card.create(name: "Woods' Owl", klass: 'Creature', rarity: "Common", kingdom: 'Faunter', collection: 'Basic', collection_number: 1, skills: 'Fly', attack: 1, hp: 3 , card_image: "basic-1.jpg")
 
+Card.create(name: "Bramble Elf", klass: 'Creature', rarity: "Rare", kingdom: 'Faunter', collection: 'Basic', collection_number: 2, skills: 'Sweet Scent, Antitoxins', attack: 1, hp: 3 , card_image: "basic-2.jpg")
 
+Card.create(name: "Miracle Vine", klass: 'QuickSpell', rarity: "Common", kingdom: 'Faunter', collection: 'Basic', collection_number: 3, skills: 'Return an ally to the hand', attack: '', hp: '', card_image: "basic-3.jpg")
 
-
-Card.create(name: "Paragon of Light", klass: 'Paladin', rarity: "rare", mana_cost: 3 , type_of_card: 'minion', collection: 'Basic Set', skills: 'Has Taunt and Lifesteal while it has 3 or more Attack', attack: 2, hp: 5, card_image: "https://d1u5p3l4wpay3k.cloudfront.net/hearthstone_gamepedia/thumb/d/d2/Paragon_of_Light%2889433%29_Gold.png/200px-Paragon_of_Light%2889433%29_Gold.png?version=c8d488378ed85d14b64fff26f2b149d7")
-
-Card.create(name: "Hunting Mastiff", klass: 'Hunter', rarity: "common", mana_cost: 2, type_of_card: 'minion', collection: 'Basic Set', skills: 'Echo and Rush', attack: 2, hp: 1, card_image: "https://d1u5p3l4wpay3k.cloudfront.net/hearthstone_gamepedia/thumb/a/a7/Hunting_Mastiff%2889361%29.png/200px-Hunting_Mastiff%2889361%29.png?version=d6fecbacc8be1f3d1dd1777fec501afb")
-
-Card.create(name: "Ysera", klass: 'Neutral', rarity: "legendary", mana_cost: 9, type_of_card: 'minion', collection: 'Basic Set', skills: 'At the end of your turn, draw a Dream Card', attack: 4, hp: 12, card_image: "https://d1u5p3l4wpay3k.cloudfront.net/hearthstone_gamepedia/thumb/6/6d/Ysera%28495%29.png/200px-Ysera%28495%29.png?version=b7017ded8990146584a8dccf481e1c1e")
-
-
-
-
-# t.string "name"
-# t.string "klass"
-# t.string "rarity"
-# t.integer "mana_cost"
-# t.string "type_of_card"
-# t.string "collection"
-# t.integer "collection_number"
-# t.string "skills"
-# t.integer "attack"
-# t.integer "hp"
-# t.string "card_image"
+Card.create(name: "Moniur", klass: 'Creature', rarity: "Common", kingdom: 'Faunter', collection: 'Basic', collection_number: 5, skills: '', attack: 1, hp: 3 , card_image: "basic-5.jpg")

@@ -8,8 +8,7 @@ This is your collection
 		<th>Name</th>
 		<th>Class</th>
 		<th>Type of card</th>
-		<th colspan="2">Collection</th>
-		<th>Mana cost</th>
+		<th >Collection</th>
 		<th>Healt points</th>
 		<th>Attack points</th>
 		<th>Skills</th>
@@ -19,13 +18,12 @@ This is your collection
 			<td><%= card.id%></td>
 			<td><li style="list-style-type: none;" value="<%= card.id%>" data-toggle="modal" data-target="#myModal<%= card.id%>"><%= card.name%></li></td>
 			<td><%= card.klass%></td>
-			<td><%= card.type_of_card%></td>
-			<td><%= card.collection%></td>
-			<td><%= card.collection_number%></td>
-			<td><%= card.mana_cost%></td>
+			<td><%= card.kingdom%></td>
+			<td><%= "#{card.collection}-#{card.collection_number}"%></td>
 			<td><%= card.hp%></td>
 			<td><%= card.attack%></td>
 			<td><%= card.skills%></td>
+
 
 
 			<!-- The Modal -->
@@ -40,7 +38,12 @@ This is your collection
 
 				      <!-- Modal body -->
 				      <div class="modal-body mx-auto">
-				        <%= image_tag card.card_image%>
+								<%= image_tag "cards_images/#{card.card_image}", width: '300'%>
+				      </div>
+
+				      <!-- Modal footer -->
+				      <div class="modal-footer mx-auto">
+				       	<%= card.skills%>
 				      </div>
 
 					</div>

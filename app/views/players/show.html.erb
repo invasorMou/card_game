@@ -6,3 +6,15 @@
 
 
 <h4 id="header-links" class="col-md"><%= link_to "Logout", destroy_player_session_path, method: :delete, class:"link-design" %></h4>
+
+
+<%require 'aws-sdk-s3'  # v2: require 'aws-sdk'%>
+
+<%region = 'sa-east-1'
+s3 = Aws::S3::Resource.new(region: region)
+obj = s3.bucket('cards-images')%>
+
+<% obj.objects.each do |img|  %>
+    <% img.etag%>
+
+  <%end%>
