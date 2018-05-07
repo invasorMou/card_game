@@ -11,7 +11,8 @@ Rails.application.routes.draw do
     resources :decks
     resources :collection
     resources :battle do
-      get "room1", to: 'battle#show'
+      get "room", to: 'battle#show'
+      mount ActionCable.server => "/cable"
     end
   end
 end
