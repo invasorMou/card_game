@@ -5,4 +5,8 @@ class Player < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
          has_many :decks
          has_many :card_copies
+
+  def deck
+    Deck.where(player_id: id).first.card_decks
+  end
 end

@@ -1,0 +1,106 @@
+#msg {
+display: inline-block;
+position: absolute;
+top: 0px;
+}
+
+.gamezone {
+  width: 75%;
+  height: 90vh;
+  position: absolute;
+  right: 0px;
+  display: inline-block;
+}
+
+.gameboard {
+  width: 90%;
+  display: inline-block;
+  position: relative;
+  right: 0;
+}
+
+.opp-d-g {
+  width: 15vh;
+  height: 40vh;
+  display: inline-block;
+  position: relative;
+  top: -122px;
+}
+
+.main-d-g {
+  width: 15vh;
+  height: 40vh;
+  display: inline-block;
+  position: relative;
+  top: 142px;
+}
+
+.center {
+  width: 60%;
+  height: 80vh;
+  border: 1px solid black;
+  margin: auto;
+  display: inline-block;
+}
+
+.opp-side {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-side {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mons-zone {
+  width: 100%;
+  height: 20vh;
+  border: 2px solid gold;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mons-zone div {
+  width: 13vh;
+  height: 18vh;
+  border: 1px solid black;
+}
+
+.hand-zone {
+  width: 100%;
+  height: 20vh;
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hand-zone div {
+  width: 13vh;
+  height: 18vh;
+  border: 1px solid black;
+  margin: 0 2px 0 2px;
+
+}
+
+.grave-zone {
+  width: 15vh;
+  height: 20vh;
+  border: 2px solid blue;
+  display: inline-block;
+}
+
+.deck-zone {
+  width: 15vh;
+  height: 20vh;
+  border: 2px solid black;
+  display: inline-block;
+}
+
+.d-z-1{
+  width: 13vh;
+  height: 18vh;
+  border: 1px solid black;
+}

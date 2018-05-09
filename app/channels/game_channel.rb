@@ -1,12 +1,21 @@
 class GameChannel < ApplicationCable::Channel
   def subscribed
     # stream_from "some_channel"
-    stream_from "player_#{uuid}"
-    Seek.create(uuid)
+    stream_from "player_#{current_player.id}"
+    Seek.create(current_player)
   end
 
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
-    Seek.remove(uuid)
+    Seek.remove(current_player.id)
+  end
+
+  def speak(data)
+    Game.speak(data)
+    REDIS.set("msgFromConsole", data['msg'])
+  end
+
+  def load_deck
+    Game.load_deck
   end
 end

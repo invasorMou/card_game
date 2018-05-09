@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20180502211943) do
 
   create_table "card_decks", force: :cascade do |t|
     t.integer "deck_id"
-    t.integer "card_id"
+    t.integer "card_copy_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

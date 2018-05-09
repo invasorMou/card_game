@@ -19,4 +19,35 @@ $(function() {
     })(this)
   };
   return App.board = ChessBoard("chessboard", cfg);
+
+
+  class Board() {
+    constructor(){
+      this.status = '';
+      this.sides = [side1, side2];
+    }
+  }
+
+/* mons_z = monster zone
+   deck_z = deck zone
+   grav_z = graveyard zone
+   hand_z = hand zone
+*/
+  class Side{
+    constructor(){
+      this.mons_z = {
+        template: };
+      this.deck_z =;
+      this.grav_z =;
+      this.hand_z =;
+    }
+  }
+
+
+
+
+
+
+
+
 });
