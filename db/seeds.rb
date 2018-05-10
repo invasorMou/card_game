@@ -18,12 +18,14 @@ Card.create!(name: "Nymph of the Bramble", klass: 'Creature', rarity: "Legendary
 Card.create!(name: "Parlizo", klass: 'Creature', rarity: "Common", kingdom: 'Faunter', collection: 'Basic', collection_number: 9, skills: 'Plate, Reflect', attack: 0, hp: 3 , card_image: "basic-9.jpg")
 
 
-Deck.create!(player_id: 1)
-Deck.create!(player_id: 2)
+Deck.create!(player_id: 1, deck_name: 'starter deck')
+Deck.create!(player_id: 2, deck_name: 'fury of the woods')
 
 CardCopy.create!(player_id: 1, card_id: 1)
 CardCopy.create!(player_id: 1, card_id: 2)
 CardCopy.create!(player_id: 1, card_id: 3)
+CardCopy.create!(player_id: 1, card_id: 4)
+CardCopy.create!(player_id: 1, card_id: 5)
 CardCopy.create!(player_id: 2, card_id: 1)
 CardCopy.create!(player_id: 2, card_id: 2)
 CardCopy.create!(player_id: 2, card_id: 3)

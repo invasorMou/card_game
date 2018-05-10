@@ -17,6 +17,18 @@ function removeCard(card){
   card.remove()
 }
 
+function loadDeck(ele){
+  $.get( "/deck/"+ele)
+  .done(function( data ) {
+    var length = data.payload.length;
+    $deck = $('.deck-content');
+    for(var x = 0; x < length; x ++){
+      var img = '<img src='+data.payload[x]+' width="100" data-skills="none" onclick="removeCard(this)" onmousemove="cardView(this.src, this.getAttribute("data-skills"))>';
+      $deck.append(img);
+    }
+  });
+}
+
 class Deck{
   
 }

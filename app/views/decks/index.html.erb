@@ -15,7 +15,8 @@
   </div>
   <div class="deck">
     <div class="">
-      <h6>Select a deck:</h6>
+      <h6 class="inl">Select a deck:</h6>
+      <%= select("deck", "deck_id", @decks.collect {|d| [ d.deck_name, d.id ] }, { include_blank: true }, :onchange => "loadDeck(this.value)")%>
       </div>
       <div class="deck-content">
         

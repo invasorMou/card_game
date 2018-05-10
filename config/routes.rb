@@ -15,4 +15,6 @@ Rails.application.routes.draw do
       mount ActionCable.server => "/cable"
     end
   end
+  
+  get '/deck/:deck_id', to: 'decks#deckdata'
 end
