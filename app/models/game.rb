@@ -7,9 +7,6 @@ class Game
     Game.msg_player('first', "game_start", "You are going first")
     Game.msg_player('second', "game_start", "You are going second")
 
-    # ActionCable.server.broadcast "player_#{first}", {action: "game_start", msg: "You are going first"}
-    # ActionCable.server.broadcast "player_#{second}", {action: "game_start", msg: "You are going second"}
-
     REDIS.set("opponent_for:#{first}", second)
     REDIS.set("opponent_for:#{second}", first)
   end
@@ -28,7 +25,6 @@ class Game
   def self.msg_player(player,action,msg)
     player = REDIS.get("#{player}")
     ActionCable.server.broadcast "player_#{player}", {action: action, msg: msg}
-
   end
 
   def self.msg_both(action, msg)
@@ -43,18 +39,25 @@ class Game
   end
 
   def self.speak(data)
-    first = REDIS.get("first")
-    second = REDIS.get("second")
-    ActionCable.server.broadcast "player_#{first}",{action: "speak", msg: data['msg']}
-    ActionCable.server.broadcast "player_#{second}", {action: "speak", msg: data['msg']}
-
+    Game.msg_both("speak", data['msg'])
   end
 
-  def self.load_deck(player)
-    player = REDIS.get("player")
-    deck = Game.deck(player)
-    ActionCable.server.broadcast "player_#{first}", {action: "load_deck", msg:  deck, player: first}
-    ActionCable.server.broadcast "player_#{second}", {action: "load_deck", msg:  deck, player:first}
+  def self.load_decks
+    players = Game.get_players
+    decks = []
+    players.each do |player_id|
+      deck = Game.deck(player_id)
+      decks.push(deck)
+    end
+    Game.msg_both('load_deck', decks)
+    #
+    #
+    # player1 = REDIS.get("first")
+    # deck1 = Game.deck(player1)
+    # player2 = REDIS.get("second")
+    # deck2 = Game.deck(player2)
+    #
+    # Game.msg_both('load_deck', deck2)
 
   end
 
@@ -65,6 +68,7 @@ class Game
       card_obj = card.card_copy.card
       card_data = card_obj.serializable_hash
       card_data['temp_url'] = card_obj.url
+      card_data
     end
     deck
   end

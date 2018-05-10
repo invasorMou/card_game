@@ -15,7 +15,7 @@ class GameChannel < ApplicationCable::Channel
     REDIS.set("msgFromConsole", data['msg'])
   end
 
-  def load_deck
-    Game.load_deck
+  def load_decks
+    Game.load_decks
   end
 end

@@ -1,53 +1,16 @@
+//= require game
 $(function() {
-  var cfg;
-  App.chess = new Chess();
-  cfg = {
-    onDrop: (function(_this) {
-      return function(source, target) {
-        var move;
-        move = App.chess.move({
-          from: source,
-          to: target,
-          promotion: "q"
-        });
-        if (move === null) {
-          return "snapback";
-        } else {
-          return App.game.perform("make_move", move);
-        }
-      };
-    })(this)
-  };
-  return App.board = ChessBoard("chessboard", cfg);
-
-
-  class Board() {
-    constructor(){
-      this.status = '';
-      this.sides = [side1, side2];
+  console.log('board.js loaded');
+  class Decks{
+    create(arr){
+      this.deck1 = arr[0];
+      this.deck2 = arr[1];
+    }
+    content(){
+      console.log(this.deck1);
+      console.log(this.deck2);
     }
   }
-
-/* mons_z = monster zone
-   deck_z = deck zone
-   grav_z = graveyard zone
-   hand_z = hand zone
-*/
-  class Side{
-    constructor(){
-      this.mons_z = {
-        template: };
-      this.deck_z =;
-      this.grav_z =;
-      this.hand_z =;
-    }
-  }
-
-
-
-
-
-
-
+  App.decks = new Decks();
 
 });
