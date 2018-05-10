@@ -1,20 +1,39 @@
-<%= "Welcome #{current_player.email}" %>
+<nav class="navbar navbar-expand-md bg-light navbar-light">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <span><%= "Welcome #{current_player.email}" %></span>
+            <span id="header-links" class="col-md"><%= link_to "Logout", destroy_player_session_path, method: :delete, class:"link-design" %></span>
+        </li>
+    </ul>
+</nav>
 
-<%= link_to "DECKS", "#{current_player.id}/decks" %>
-<%= link_to "COLLECTION", "#{current_player.id}/collection" %>
-<%= link_to "BATTLE", "#{current_player.id}/battle" %>
 
 
-<h4 id="header-links" class="col-md"><%= link_to "Logout", destroy_player_session_path, method: :delete, class:"link-design" %></h4>
+<div class="btn-mid">
+    <%= link_to "#{current_player.id}/decks" do %>
+        <button type="button" class="btn btn-outline-info btn-big">
+            <span class="big-links">DECKS</span>
+        </button>
+    <%end%>
+</div>
+<div class="btn-mid">
+    <%= link_to "#{current_player.id}/collection" do %>
+        <button type="button" class="btn btn-outline-info btn-big">
+            <span class="big-links">COLLECTION</span>
+        </button>
+    <%end%>
+</div>
+<div class="btn-mid">
+    <%= link_to "#{current_player.id}/battle" do %>
+        <button type="button" class="btn btn-outline-info btn-big">
+            <span class="big-links">BATTLE</span>
+        </button>
+    <%end%>
+</div>
 
+   
 
-<%require 'aws-sdk-s3'  # v2: require 'aws-sdk'%>
-
-<%region = 'sa-east-1'
-s3 = Aws::S3::Resource.new(region: region)
-obj = s3.bucket('cards-images')%>
-
-<% obj.objects.each do |img|  %>
-    <% img.etag%>
-
-  <%end%>
+            
+            
+            
+   

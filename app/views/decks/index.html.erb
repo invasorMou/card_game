@@ -1,4 +1,43 @@
-DECK EDITOR
-<div class="test">
-  adsfsadf
+<nav class="navbar navbar-expand-md bg-light navbar-light">
+      <%= link_to "/players/#{current_player.id}" do %>
+        <button type="button" class="btn btn-outline-info btn-sm">
+            <span >MENU</span>
+        </button>
+      <%end%>
+  <div class="big-title">DECK EDITOR</div>
+</nav>
+<div>
+  <div class="card-view">
+    <img class='cardPic' src="" width="300"></img>
+  </div>
+  <div class="description">
+    
+  </div>
+  <div class="deck">
+    <div class="">
+      <h6>Select a deck:</h6>
+      </div>
+      <div class="deck-content">
+        
+      </div>
+  </div>
+  <div class="collection">
+      <div class="md-title text-center">COLLECTION</div>
+        <div class="mx-auto table">
+        	<table>
+      	    <% @cards.each do |card|%>
+      	      <% card = card.data%>
+        		  <tr>
+        		    <td><%= image_tag card.url, width: '100',onclick: 'addCard(this.src, this.getAttribute("data-id"))', onmousemove: 'cardView(this.src, this.getAttribute("data-skills"))', :data => { :skills => card.skills, :id => card.id}  %></td>
+          			<td>
+            			 <%= card.name%> <br>
+            			 <%= card.kingdom%> <br> 
+            			 <%= "HP: #{card.hp}"%> 
+            			 <%= "Att: #{card.attack}"%>
+          			 </td>
+        		  </tr>
+      	    <%end%>
+        </table>
+      </div>
+  </div>
 </div>

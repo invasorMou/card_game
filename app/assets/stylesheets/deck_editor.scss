@@ -1,0 +1,57 @@
+.big-title {
+  font-size: 2em;
+}
+
+.md-title {
+  font-size: 1.5em;
+}
+
+.big-title {
+  position: absolute;
+  left: 42%;
+}
+
+.card-view {
+  border: 1px solid black;
+  width: 24vw;
+  height: 60vh;
+  display: inline-block;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.cardPic {
+  display: block;
+  margin: 5px auto 0;
+}
+
+.description {
+  border: 1px solid black;
+  width: 24vw;
+  height: 31vh;
+  display: inline-block;
+  position: absolute;
+  top: 445px;
+  box-sizing: border-box;
+  padding: 0 0 0 5px;
+}
+
+.deck {
+  border: 1px solid black;
+  width: 45vw;
+  height: 92vh;
+  position: absolute;
+  box-sizing: border-box;
+  right: 416px;
+  z-index: -100;
+}
+
+.collection {
+  border: 1px solid black;
+  width: 30vw;
+  height: 92vh;
+  position: absolute;
+  box-sizing: border-box;
+  right: 0px;
+  overflow: scroll
+}

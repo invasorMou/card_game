@@ -9,4 +9,7 @@ class Player < ApplicationRecord
   def deck
     Deck.where(player_id: id).first.card_decks
   end
+  def decks
+    Deck.where(player_id: id)
+  end
 end
